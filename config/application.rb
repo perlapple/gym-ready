@@ -22,5 +22,17 @@ module GymReady
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      if html_tag =~ /label/
+        html_tag
+      else
+        if instance.error_message.kind_of?(Array)
+          %(<span class="has-error">#{html_tag}<span class='help-block'>#{instance.error_message.join(",")}</span></span>).html_safe
+        else
+          %(#{html_tag}<div class="has-error">&nbsp;</div>).html_safe
+        end
+      end
+    end
   end
 end

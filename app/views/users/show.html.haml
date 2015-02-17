@@ -21,9 +21,9 @@
       .panel-heading
         %span.panel-title About me
       .panel-body
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-        %a{:href => "#"} dolore magna
-        aliqua.
+        = User.human_attribute_name(:height_in_cm)
+        = @user.height_in_cm
+        cm
     .panel.panel-transparent
       .panel-heading
         %span.panel-title Statistics

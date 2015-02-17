@@ -1,1 +1,38 @@
-Edit
+= form_for @user, url: {action: "update"}, html: {class: "panel form-horizontal"} do |f|
+  .panel-heading
+    %span.panel-title Form example
+  .panel-body
+    .form-group
+      = f.label :first_name, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :first_name, class: "form-control"
+    .form-group
+      = f.label :last_name, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :last_name, class: "form-control"
+    .form-group
+      = f.label :date_of_birth, class: "col-sm-2 control-label"
+      .col-sm-3
+        .input-group.date
+          = f.text_field :date_of_birth, class: "form-control datepicker"
+          %span.input-group-addon
+            %i.fa.fa-calendar
+    .form-group
+      = f.label :height_in_cm, class: "col-sm-2 control-label"
+      .col-sm-3
+        .input-group.date
+          = f.text_field :height_in_cm, class: "form-control"
+          %span.input-group-addon
+            %small
+              %small
+                %small CM
+
+    .form-group
+      = f.label :gender, class: "col-sm-2 control-label"
+      .col-sm-3
+        = f.select(:gender, [["Female", "female"], ["Male", "male"] ], {include_blank: true}, class: "form-control form-group-margin")
+   
+    
+    .form-group{:style => "margin-bottom: 0;"}
+      .col-sm-offset-2.col-sm-10
+        = f.submit class: "btn btn-primary"

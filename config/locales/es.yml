@@ -1,0 +1,16 @@
+es:
+  hello: "Hello world hola perla!"
+
+  activerecord:
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+
+    attributes:
+      user:
+        height_in_cm: "Altura"
+        first_name: "Nombre"
+        last_name: "Apellido"
+        gender: "Genero"
+        date_of_birth: "Fecha de Nacimiento"

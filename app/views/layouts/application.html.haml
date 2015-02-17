@@ -53,11 +53,9 @@
                       %span Perla
                     %ul.dropdown-menu
                       %li
-                        %a{:href => "#"}
-                          %span.label.label-warning.pull-right> New
-                          Profile
+                        = link_to "Profile", profile_path
                       %li
-                        %a{:href => "#"}
+                        %a{href: "#"}
                           %span.badge.badge-primary.pull-right> New
                           Account
                       %li
@@ -99,4 +97,4 @@
       init.push(function () {
         // Javascript code here
       });
-      window.PixelAdmin.start(init);
+      // window.PixelAdmin.start(init);
