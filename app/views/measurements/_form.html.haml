@@ -1,0 +1,30 @@
+= form_for @measurement, html: {class: "panel form-horizontal"} do |f|
+  .panel-heading
+    %span.panel-title= Measurement.model_name.human(count: 2)
+  .panel-body
+
+    - if @measurement.errors.any? 
+      .alert.alert-danger
+        %ul
+          - @measurement.errors.full_messages.each do |msg|
+            %li= msg
+
+    .form-group
+      = f.label :weight, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :weight, class: "form-control"
+    .form-group
+      = f.label :body_fat_percentage, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :body_fat_percentage, class: "form-control"
+    .form-group
+      = f.label :date, class: "col-sm-2 control-label"
+      .col-sm-3
+        .input-group.date
+          = f.text_field :date, class: "form-control datepicker"
+          %span.input-group-addon
+            %i.fa.fa-calendar
+
+    .form-group{:style => "margin-bottom: 0;"}
+      .col-sm-offset-2.col-sm-10
+        = f.submit class: "btn btn-primary"

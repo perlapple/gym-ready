@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users
   resource :profile, except: [:create, :new, :destroy], controller: "users"
+  resources :measurements, except: [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

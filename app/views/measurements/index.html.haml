@@ -1,0 +1,29 @@
+.pull-right
+  = link_to new_measurement_path, class: "btn btn-primary" do
+    %i.nav-icon.fa.fa-plus
+    = t("views.new")
+
+.clearfix
+%br/
+
+.panel
+  .panel-heading
+    %span.panel-title= Measurement.model_name.human(count: 2)
+  .panel-body
+    %table.table.table-striped
+      %thead
+        %tr
+          %th= Measurement.human_attribute_name(:weight)
+          %th= Measurement.human_attribute_name(:body_fat_percentage)
+          %th= Measurement.human_attribute_name(:date)
+          %th= t("views.actions")
+      %tbody
+        - @measurements.each do |measurement|
+          %tr
+            %td= measurement.weight
+            %td= measurement.body_fat_percentage
+            %td= l(measurement.date, format: :long)
+            %td
+              = link_to(t("views.edit"), edit_measurement_path(measurement) ) 
+              | 
+              = link_to(t("views.delete"), measurement_path(measurement), method: :delete, data: {confirm: t("views.confirm")})

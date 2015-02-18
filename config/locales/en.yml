@@ -21,12 +21,21 @@
 
 en:
   hello: "Hello world hola perla!"
+  views:
+    edit: "Edit"
+    actions: "Actions"
+    new: "New"
+    delete: "Delete"
+    confirm: "Are you sure?"
 
   activerecord:
     models:
       user:
         one: User
         other: Users
+      measurement:
+        one: Measurement
+        other: Measurements
 
     attributes:
       user:
@@ -35,7 +44,16 @@ en:
         last_name: "Last Name"
         gender: "Gender"
         date_of_birth: "Date of Birth"
+      measurement:
+        weight: "Weight"
+        body_fat_percentage: "Body Fat %"
+        date: "Date"
 
     errors:
       messages:
         inclusion: "is not a permitted value"
+      models:
+        measurement:
+          attributes:
+            base:
+              weight_or_body_fat: "Either weight or body fat is required."
