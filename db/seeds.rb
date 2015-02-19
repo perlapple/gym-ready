@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+  muscles = ["Traps", "Shoulders", "Biceps", "Triceps", "Forearms", "Chest",
+    "Back", "Lats", "Abs", "Legs", "Glutes", "Quadriceps", "Hamstrings", "Calves"]
+  muscles.each do |muscle|
+    muscle_group = MuscleGroup.create [ name: muscle ]
+  end
