@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   resource :profile, except: [:create, :new, :destroy], controller: "users"
   resources :measurements, except: [:show]
+  resources :routines
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

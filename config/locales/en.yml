@@ -36,6 +36,9 @@ en:
       measurement:
         one: Measurement
         other: Measurements
+      routine:
+        one: Routine
+        other: Routines
 
     attributes:
       user:
@@ -48,6 +51,9 @@ en:
         weight: "Weight"
         body_fat_percentage: "Body Fat %"
         date: "Date"
+      routine:
+        name: "Name"
+        description: "Description"
 
     errors:
       messages:

@@ -1,0 +1,17 @@
+= form_for @routine, html: {class: "panel form-horizontal"} do |f|
+  .panel-heading
+    %span.panel-title= Routine.model_name.human(count: 2)
+  .panel-body
+
+    .form-group
+      = f.label :name, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :name, class: "form-control"
+    .form-group
+      = f.label :description, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :description, class: "form-control"
+
+    .form-group{:style => "margin-bottom: 0;"}
+      .col-sm-offset-2.col-sm-10
+        = f.submit class: "btn btn-primary"
