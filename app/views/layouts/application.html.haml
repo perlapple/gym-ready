@@ -78,6 +78,8 @@
       = render "/layouts/navigation"
       #content-wrapper
         / %ul.breadcrumb.breadcrumb-page= render_breadcrumbs tag: :li, separator: ""
+        = flash[:notice] if flash[:notice].present?
+        = flash[:alert] if flash[:alert].present?
 
         = content_for?(:content) ? yield(:content) : yield
       / / #content-wrapper
