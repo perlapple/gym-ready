@@ -1,0 +1,29 @@
+.pull-right
+  = link_to new_routine_path, class: "btn btn-primary" do
+    %i.nav-icon.fa.fa-plus
+    = t("views.new")
+
+.clearfix
+%br/
+
+.panel
+  .panel-heading
+    %span.panel-title= Exercise.model_name.human(count: 2)
+  .panel-body
+    %table.table.table-striped
+      %thead
+        %tr
+          %th= Exercise.human_attribute_name(:name)
+          %th= Exercise.human_attribute_name(:description)
+          %th= MuscleGroup.model_name.human(count:2)
+          %th= t("views.actions")
+      %tbody
+        - @exercises.each do |exercise|
+          %tr
+            %td= exercise.name
+            %td= exercise.description
+            %td= exercise.muscle_group.name
+            %td   
+              = link_to(t("views.edit"), edit_exercise_path(exercise) ) 
+              | 
+              = link_to(t("views.delete"), exercise_path(exercise), method: :delete, data: {confirm: t("views.confirm")})

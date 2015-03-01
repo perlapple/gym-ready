@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   get 'welcome/index'
 
   root 'welcome#index'
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
   resource :profile, except: [:create, :new, :destroy], controller: "users"
   resources :measurements, except: [:show]
   resources :routines
+  resources :exercises,  except: [:show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

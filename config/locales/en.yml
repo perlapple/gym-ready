@@ -39,6 +39,12 @@ en:
       routine:
         one: Routine
         other: Routines
+      muscle_group:
+        one: Muscle Group
+        other: Muscle Groups
+      exercise:
+        one: Exercise
+        other: Exercises
 
     attributes:
       user:
@@ -52,6 +58,9 @@ en:
         body_fat_percentage: "Body Fat %"
         date: "Date"
       routine:
+        name: "Name"
+        description: "Description"
+      exercise:
         name: "Name"
         description: "Description"
 
